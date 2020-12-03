@@ -1,0 +1,8 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "line-reader": "^0.4.0"
+  }
+}
