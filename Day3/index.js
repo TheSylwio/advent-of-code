@@ -1,6 +1,6 @@
 const lineReader = require('line-reader');
 
-const path = `${__dirname}\\data.txt`;
+const path = './input.txt';
 let rows = [];
 
 lineReader.eachLine(path, line => {
