@@ -7,31 +7,22 @@ lineReader.eachLine(path, line => {
   lines = [...lines, line];
 });
 
-const getRowId = code => {
-  let lowerLimit = 0, upperLimit = 128, diff = 64;
+const getId = (code, character, max) => {
+  let lowerLimit = 0, upperLimit = max, diff = max / 2;
 
   for (let char of code) {
-    char === 'F' ? upperLimit -= diff : lowerLimit += diff;
+    char === character ? upperLimit -= diff : lowerLimit += diff;
     diff /= 2;
   }
 
   upperLimit -= 1;
 
-  return code.substring(6, 7) === 'F' ? lowerLimit : upperLimit;
+  return code.substring(code.length - 1, code.length) === character ? lowerLimit : upperLimit;
 }
 
-const getColumnId = code => {
-  let lowerLimit = 0, upperLimit = 8, diff = 4;
+const getRowId = code => getId(code, 'F', 128);
 
-  for (let char of code) {
-    char === 'L' ? upperLimit -= diff : lowerLimit += diff;
-    diff /= 2;
-  }
-
-  upperLimit -= 1;
-
-  return code.substring(2, 3) === 'L' ? lowerLimit : upperLimit;
-}
+const getColumnId = code => getId(code, 'L', 8);
 
 const createObject = line => {
   const rowId = getRowId(line.substring(0, 7));
