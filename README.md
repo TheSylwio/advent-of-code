@@ -10,11 +10,10 @@ Directory `DayX` includes:
 
 
 ## 📈 Progress
-| 1-6 | 7-12 | 13-18 | 19-24 |
-|---|---|---|---|
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day1)|[⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day7)|   |   |
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day2)|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day8)||   |
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day3)|   |   |   |
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day4)|   |   |   |
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day5)|   |   |   |
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day6)|   |   |   |
+| 1-5 | 6-10 | 11-15 | 16-20 | 21-25 |
+|---|---|---|---|---|
+|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day1)|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day6)| | | |
+|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day2)|[⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day7)| | | |
+|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day3)|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day8)| | | |
+|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day4)| | | | |
+|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day5)| | | | |
