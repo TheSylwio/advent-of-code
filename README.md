@@ -16,4 +16,4 @@ Directory `DayX` includes:
 |[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day2)|[⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day7)| | | |
 |[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day3)|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day8)| | | |
 |[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day4)|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day9)| | | |
-|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day5)| | | | |
+|[⭐⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day5)|[⭐](https://github.com/TheSylwio/advent-of-code/tree/master/src/Day10)| | | |
