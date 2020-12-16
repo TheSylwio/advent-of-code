@@ -55,17 +55,31 @@ const checkGroupOfTickets = (tickets, instructions) => {
   return results.reduce((acc, curr) => acc + curr);
 };
 
+const removeInvalidTickets = (tickets, instructions) => {
+  let copy = [...tickets];
+  for (let [index, ticket] of copy.entries()) {
+    const result = checkTicketErrorRate(ticket, instructions);
+    if (result !== 0) {
+      delete copy[index];
+    }
+  }
+
+  return copy.filter(el => el !== null);
+};
+
 
 const main = () => {
-  const instructions = lines.slice(0, 20); // 0 20 <=> 0 3
-  const ticket = lines.slice(22, 23)[0]; // 22 23 <=> 5 6
-  const nearbyTickets = lines.slice(25, lines.length); //25 LL <=> 8 LL
+  const instructions = lines.slice(0, 3); // 0 20 <=> 0 3
+  const ticket = lines.slice(5, 6)[0]; // 22 23 <=> 5 6
+  const nearbyTickets = lines.slice(8, lines.length); //25 LL <=> 8 LL
 
   const instructionsObject = createInstructionsObject(instructions);
   const ticketErrorRate = checkTicketErrorRate(ticket, instructionsObject);
   const nearbyTicketsErrorRate = checkGroupOfTickets(nearbyTickets, instructionsObject);
 
-  console.log(ticketErrorRate, nearbyTicketsErrorRate);
+  const validTickets = removeInvalidTickets(nearbyTickets, instructionsObject);
+
+  // console.log(nearbyTicketsErrorRate, nearbyTickets, validTickets);
 };
 
 setTimeout(main, 1000);
