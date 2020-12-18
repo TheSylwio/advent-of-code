@@ -67,6 +67,49 @@ const removeInvalidTickets = (tickets, instructions) => {
   return copy.filter(el => el !== null);
 };
 
+const createMatrix = length => Array(length).fill(0).map(() => Array(length).fill(0));
+
+const searchMatrix = matrix => {
+  let copy = matrix.map(arr => arr.slice(0));
+  let transposedCopy = copy[0].map((_, colIndex) => copy.map(row => row[colIndex]));
+  let searchedRowIndex = 0, searchedColumnIndex = 0;
+
+  for (let row of copy) {
+    const sum = row.reduce((prev, curr) => prev + curr);
+    if (sum === 2) searchedRowIndex = sum;
+  }
+
+  for (let row of transposedCopy) {
+    const sum = row.reduce((prev, curr) => prev + curr);
+    if (sum === 0) searchedColumnIndex = sum;
+  }
+
+  console.log(searchedRowIndex, searchedColumnIndex);
+};
+
+
+const getFinalValue = (tickets, instructions) => {
+  let matrix = createMatrix(tickets.length);
+  const ranges = Object.values(instructions);
+
+  // Fill matrix with invalid values counts
+  for (let ticket of tickets) {
+    const ticketValues = ticket.split(',').map(el => Number(el));
+
+    for (let [ticketValueIndex, ticketValue] of ticketValues.entries()) {
+      for (let [rangeIndex, range] of ranges.entries()) {
+        if (!isValueInRange(ticketValue, range[0]) && !isValueInRange(ticketValue, range[1])) {
+          matrix[rangeIndex][ticketValueIndex]++;
+        }
+      }
+    }
+  }
+
+  searchMatrix(matrix);
+
+  // console.log(matrix);
+};
+
 
 const main = () => {
   const instructions = lines.slice(0, 3); // 0 20 <=> 0 3
@@ -78,8 +121,7 @@ const main = () => {
   const nearbyTicketsErrorRate = checkGroupOfTickets(nearbyTickets, instructionsObject);
 
   const validTickets = removeInvalidTickets(nearbyTickets, instructionsObject);
-
-  // console.log(nearbyTicketsErrorRate, nearbyTickets, validTickets);
+  const finalValue = getFinalValue(validTickets, instructionsObject);
 };
 
 setTimeout(main, 1000);
